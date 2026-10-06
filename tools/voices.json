@@ -1,0 +1,6 @@
+{
+  "note": "Settings from your AI Studio script. Odd-numbered stops use Speaker 1's voice, even-numbered stops Speaker 2's, exactly as the script alternated them.",
+  "model": "gemini-3.8-flash-tts",
+  "temperature": 2,
+  "voices": { "odd": "Veda", "even": "Achird" }
+}

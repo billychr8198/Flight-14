@@ -1,0 +1,14 @@
+{
+  "name": "flight-14-ca",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Flight 14-CA: a cinematic scroll Pomodoro timer over 30 California wonders.",
+  "scripts": {
+    "frames": "node tools/build-frames.mjs",
+    "voices": "node tools/build-voices.mjs",
+    "start": "node tools/serve.mjs"
+  },
+  "optionalDependencies": {
+    "ffmpeg-static": "^5.2.0"
+  }
+}

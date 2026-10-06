@@ -1,0 +1,202 @@
+{
+  "note": "Higgsfield generations for Flight 14-CA. `npm run frames` downloads these and slices the films into scroll frames.",
+  "stills": {
+    "hero": {
+      "job": "44e8ed5d-06d6-47c1-a2fb-8abb89c27062",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_112357_44e8ed5d-06d6-47c1-a2fb-8abb89c27062.png",
+      "prompt": "Hero plate: golden hour over the California coastline through the airplane window"
+    },
+    "yosemite": {
+      "job": "90a13c35-c959-48f1-822e-3e8abdce9dfe",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_112452_90a13c35-c959-48f1-822e-3e8abdce9dfe.png",
+      "prompt": "Edit (a): Yosemite Valley in crisp morning light",
+      "spot": 1
+    },
+    "bigsur": {
+      "job": "79c69538-ec29-407f-a83a-202f4d0b1156",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_112452_79c69538-ec29-407f-a83a-202f4d0b1156.png",
+      "prompt": "Edit (b): Big Sur cliffs with crashing waves",
+      "spot": 5
+    },
+    "goldengate": {
+      "job": "6f108671-6078-4019-8b94-12e0ab9c6bce",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_112452_6f108671-6078-4019-8b94-12e0ab9c6bce.png",
+      "prompt": "Edit (c): Golden Gate Bridge wrapped in rolling fog",
+      "spot": 2
+    },
+    "deathvalley": {
+      "job": "4afd0572-404e-4ee4-884c-000d0fb97709",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_112452_4afd0572-404e-4ee4-884c-000d0fb97709.png",
+      "prompt": "Edit (d): Death Valley's glowing dunes",
+      "spot": 4
+    },
+    "joshuatree": {
+      "job": "98a8bfc6-e8df-4676-bc08-ed422f31fc93",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_112716_98a8bfc6-e8df-4676-bc08-ed422f31fc93.png",
+      "prompt": "Edit (e): Joshua Tree under a heavy starry night",
+      "spot": 7
+    },
+    "redwoods": {
+      "spot": 3,
+      "job": "333b498d-d8a1-4137-91f1-2131e91494c1",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_124552_333b498d-d8a1-4137-91f1-2131e91494c1.png",
+      "prompt": "Edit of the hero: Redwood National and State Parks in fog"
+    },
+    "tahoe": {
+      "spot": 6,
+      "job": "0cba76cd-b346-46fd-9166-7d5784a74ef4",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_124552_0cba76cd-b346-46fd-9166-7d5784a74ef4.png",
+      "prompt": "Edit of the hero: Lake Tahoe, clear sapphire water"
+    },
+    "sequoia": {
+      "spot": 8,
+      "job": "610af581-cc02-4722-b5e9-9145bb024da4",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_124552_610af581-cc02-4722-b5e9-9145bb024da4.png",
+      "prompt": "Edit of the hero: Sequoia National Park groves and granite"
+    },
+    "anaheim": {
+      "spot": 9,
+      "job": "e5914c6a-1a0a-4827-a122-adf0c15499aa",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_124552_e5914c6a-1a0a-4827-a122-adf0c15499aa.png",
+      "prompt": "Edit of the hero: Anaheim at dusk, generic storybook castle and fireworks"
+    },
+    "hollywood": {
+      "spot": 10,
+      "job": "cfbcfaba-ffcb-4252-8283-06b7d9df1b3b",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_124552_cfbcfaba-ffcb-4252-8283-06b7d9df1b3b.png",
+      "prompt": "Edit of the hero: Hollywood Hills and Griffith Observatory, no sign"
+    },
+    "alcatraz": {
+      "spot": 11,
+      "job": "2ac1a66d-c78d-4d55-8637-349c06592ea6",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_124552_2ac1a66d-c78d-4d55-8637-349c06592ea6.png",
+      "prompt": "Edit of the hero: Alcatraz Island in the bay"
+    },
+    "monterey": {
+      "spot": 12,
+      "job": "15c8565b-ee6a-40fa-9b00-9f8249c0762f",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_124552_15c8565b-ee6a-40fa-9b00-9f8249c0762f.png",
+      "prompt": "Edit of the hero: Monterey Bay kelp forests"
+    },
+    "santamonica": {
+      "spot": 13,
+      "job": "9ddd32d3-92f6-48c9-947d-9b6576e17b4f",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_124552_9ddd32d3-92f6-48c9-947d-9b6576e17b4f.png",
+      "prompt": "Edit of the hero: Santa Monica pier at sunset"
+    },
+    "pointreyes": {
+      "spot": 14,
+      "job": "87c69631-7c22-4154-8e2f-d5f79b1d4fea",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_124711_87c69631-7c22-4154-8e2f-d5f79b1d4fea.png",
+      "prompt": "Edit of the hero: Point Reyes headlands and lighthouse"
+    },
+    "lassen": {
+      "spot": 15,
+      "job": "6c73e518-49d6-4778-85eb-0c847b0e2f07",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_124844_6c73e518-49d6-4778-85eb-0c847b0e2f07.png",
+      "prompt": "Edit of the hero: Lassen Peak and hydrothermal basin"
+    },
+    "shasta": {
+      "spot": 16,
+      "job": "bbca8272-14d8-4e4a-a7ce-1b1ff0a0e37b",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_124711_bbca8272-14d8-4e4a-a7ce-1b1ff0a0e37b.png",
+      "prompt": "Edit of the hero: Mount Shasta with lenticular cloud"
+    },
+    "napa": {
+      "spot": 17,
+      "job": "00238415-fc35-436a-b07d-0fb6f953fb68",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_124711_00238415-fc35-436a-b07d-0fb6f953fb68.png",
+      "prompt": "Edit of the hero: Napa Valley vineyards in autumn"
+    },
+    "santabarbara": {
+      "spot": 18,
+      "job": "e90c0fe7-f246-47c1-9870-10f464c5b172",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_124711_e90c0fe7-f246-47c1-9870-10f464c5b172.png",
+      "prompt": "Edit of the hero: Santa Barbara red-tile town and harbor"
+    },
+    "channelislands": {
+      "spot": 19,
+      "job": "27ce11c8-cd90-4fd3-baa2-f7e3a08d57fb",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_124711_27ce11c8-cd90-4fd3-baa2-f7e3a08d57fb.png",
+      "prompt": "Edit of the hero: Channel Islands sea arch and dolphins"
+    },
+    "sandiego": {
+      "spot": 20,
+      "job": "ebcc90a3-a885-4454-9678-cd6219d92d93",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_124844_ebcc90a3-a885-4454-9678-cd6219d92d93.png",
+      "prompt": "Edit of the hero: Balboa Park and the zoo, San Diego"
+    },
+    "catalina": {
+      "spot": 21,
+      "job": "ebf5d72b-57a3-40d4-a2f8-e202f9160f11",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_124711_ebf5d72b-57a3-40d4-a2f8-e202f9160f11.png",
+      "prompt": "Edit of the hero: Catalina Island, Avalon harbor"
+    },
+    "pinnacles": {
+      "spot": 22,
+      "job": "90a58136-2db9-4fda-a515-86adce253046",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_124844_90a58136-2db9-4fda-a515-86adce253046.png",
+      "prompt": "Edit of the hero: Pinnacles spires and condors"
+    },
+    "palmsprings": {
+      "spot": 23,
+      "job": "5fb02549-fde3-4d96-a119-433118130dca",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_124844_5fb02549-fde3-4d96-a119-433118130dca.png",
+      "prompt": "Edit of the hero: Palm Springs aerial tramway"
+    },
+    "monolake": {
+      "spot": 25,
+      "job": "4d41578b-0e81-479e-b289-4e8f8094ae6d",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_124844_4d41578b-0e81-479e-b289-4e8f8094ae6d.png",
+      "prompt": "Edit of the hero: Mono Lake tufa towers at sunrise"
+    },
+    "kingscanyon": {
+      "spot": 26,
+      "job": "17ff9ede-3db6-49be-ad43-aed3eeb6be1b",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_155609_17ff9ede-3db6-49be-ad43-aed3eeb6be1b.png",
+      "prompt": "Edit of the hero: Kings Canyon granite gorge"
+    },
+    "winchester": {
+      "spot": 27,
+      "job": "07fb4cfd-a05a-4f7f-aa33-0bff8420edc3",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_155609_07fb4cfd-a05a-4f7f-aa33-0bff8420edc3.png",
+      "prompt": "Edit of the hero: Winchester Mystery House"
+    },
+    "hearst": {
+      "spot": 28,
+      "job": "21f23723-519e-44a3-9376-495adf53a80a",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_155609_21f23723-519e-44a3-9376-495adf53a80a.png",
+      "prompt": "Edit of the hero: Hearst Castle above San Simeon"
+    },
+    "muirwoods": {
+      "spot": 29,
+      "job": "a4282fad-d2d2-4e2c-8063-3ef0ed5d4485",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_155610_a4282fad-d2d2-4e2c-8063-3ef0ed5d4485.png",
+      "prompt": "Edit of the hero: Muir Woods redwood canyon"
+    },
+    "mendocino": {
+      "spot": 24,
+      "job": "5e1d7673-96cd-401e-aefa-80c0c2934f35",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_155710_5e1d7673-96cd-401e-aefa-80c0c2934f35.png",
+      "prompt": "Edit of the hero: Mendocino village on the headlands"
+    },
+    "venice": {
+      "spot": 30,
+      "job": "ab97cbab-f7f5-490d-826e-5982b32ac9aa",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_155711_ab97cbab-f7f5-490d-826e-5982b32ac9aa.png",
+      "prompt": "Edit of the hero: Venice Beach at sunset"
+    }
+  },
+  "films": {
+    "flight": {
+      "job": "79b90c6c-23c3-4ef6-80f6-c17d4b7cbce1",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_112501_79b90c6c-23c3-4ef6-80f6-c17d4b7cbce1.mp4",
+      "prompt": "1 THE FLIGHT: start = end = hero. Seamless loop above the clouds."
+    },
+    "unlock": {
+      "job": "54bd2342-f6fe-418e-83b2-18593440eeb2",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J4wSHKqFffKsi6eKznHp8cXE2Z/hf_20261002_112724_54bd2342-f6fe-418e-83b2-18593440eeb2.mp4",
+      "prompt": "2 THE UNLOCK: hero to Yosemite. Clouds part to reveal the valley."
+    }
+  }
+}

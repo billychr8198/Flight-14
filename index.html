@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Flight 14-CA | Golden State Airlines</title>
+  <meta name="description" content="A cinematic focus timer. Every hour you focus, Flight 14-CA unlocks one of thirty California wonders, narrated by your flight attendant.">
+  <meta name="theme-color" content="#0d2438">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-mode="focus">
+  <a class="skip" href="#console">Skip to the timer</a>
+
+  <div class="preload" id="preload" aria-hidden="true">
+    <img src="assets/img/emblem.png" alt="" width="88" height="88">
+    <p class="preload-word">Boarding</p>
+    <div class="preload-bar"><span id="preloadBar"></span></div>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="#flight" aria-label="Flight 14-CA, back to the top">
+      <img src="assets/img/emblem.png" alt="" width="40" height="40">
+      <span class="brand-text"><span class="brand-name">Flight 14-CA</span><span class="brand-sub">Golden State Airlines</span></span>
+    </a>
+    <nav class="top-actions" aria-label="Flight controls">
+      <a class="top-pill" href="#unlock" id="meterPill" aria-label="Stops unlocked"><b id="meterPillNum">0</b><span class="pill-long">&nbsp;of 30 unlocked</span><span class="pill-short">/30</span></a>
+      <button class="top-btn" id="musicBtn" type="button" aria-pressed="true" title="Music on">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/><path class="mute" d="M3 3l18 18"/></svg>
+        <span class="lbl">Music</span>
+      </button>
+      <button class="top-btn" id="chimeBtn" type="button" aria-pressed="true" title="Chime on">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="spk" d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path class="wave" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/><path class="mute" d="M16 9.5l5 5m0-5-5 5"/></svg>
+        <span class="lbl">Chime</span>
+      </button>
+      <button class="top-btn" id="tasksBtn" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5h11M9 12h11M9 17.5h11"/><path d="m3.5 6.5 1.2 1.2 2.1-2.4M3.5 12l1.2 1.2 2.1-2.4M3.5 17.5l1.2 1.2 2.1-2.4"/></svg>
+        <span class="lbl">Tasks</span>
+      </button>
+      <button class="top-btn" id="settingsBtn" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/></svg>
+        <span class="lbl">Settings</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- I. THE FLIGHT: scroll scrubs the looping flight film; the timer lives on the cabin wall -->
+    <section class="chapter chapter-flight" id="flight" aria-label="The flight">
+      <div class="stage">
+        <canvas class="film" id="cvFlight" aria-hidden="true"></canvas>
+        <div class="grade" aria-hidden="true"></div>
+
+        <div class="titlecard" id="titlecard">
+          <p class="presents">Golden State Airlines presents</p>
+          <h1 class="title">Flight<br>14-CA</h1>
+          <p class="logline">Thirty California wonders, one for every hour you focus.</p>
+          <button class="btn btn-sun" type="button" id="takeSeat">Take your seat</button>
+          <p class="scrollcue" aria-hidden="true"><span></span>Scroll to board</p>
+        </div>
+
+        <aside class="wall wall-left deck off" id="deck" aria-label="Flight details">
+          <img class="deck-logo" src="assets/img/logo.png" alt="Golden State Airlines" width="820" height="669">
+          <dl class="deck-facts">
+            <div><dt>Passenger</dt><dd id="deckSeat">Seat 14A</dd></div>
+            <div><dt>Next stop</dt><dd id="deckNext">Yosemite</dd></div>
+            <div><dt>Landing in</dt><dd id="deckLeft">60 min of focus</dd></div>
+          </dl>
+          <p class="attendant" id="deckLine">Seatbelts fastened. Press start when you are ready to focus.</p>
+        </aside>
+
+        <section class="wall wall-right console off" id="console" aria-label="Focus timer">
+          <div class="tabs" role="tablist" aria-label="Timer mode">
+            <button role="tab" class="tab" data-mode="focus" aria-selected="true" type="button">Focus</button>
+            <button role="tab" class="tab" data-mode="short" aria-selected="false" type="button">Break</button>
+            <button role="tab" class="tab" data-mode="long" aria-selected="false" type="button">Long break</button>
+          </div>
+          <div class="clock" id="clock" role="timer" aria-live="off">60:00</div>
+          <div class="sessionbar" aria-hidden="true"><span id="sessionBar"></span></div>
+          <div class="controls">
+            <button class="icon-btn" id="resetBtn" type="button" aria-label="Restart this session">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3"/><path d="M4.5 4.5v4h4"/></svg>
+            </button>
+            <button class="btn btn-sun btn-start" id="startBtn" type="button">Start</button>
+            <button class="icon-btn" id="skipBtn" type="button" aria-label="End this session and move on">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5.5 15 12l-9 6.5z"/><path d="M18 5.5v13"/></svg>
+            </button>
+          </div>
+          <p class="console-meta"><button type="button" class="linkish" id="sessionNo" title="Reset the session count">Session 1</button><span id="statusText">Time to focus</span></p>
+          <button type="button" class="working" id="workingBtn"><span class="working-k">Working on</span><span class="working-v" id="workingOn">Add a task</span></button>
+        </section>
+
+        <p class="chapter-mark" aria-hidden="true">I</p>
+      </div>
+    </section>
+
+    <!-- II. THE UNLOCK: clouds part; the meter counts unlocked stops -->
+    <section class="chapter chapter-unlock" id="unlock" aria-label="Unlocked stops">
+      <div class="stage">
+        <canvas class="film" id="cvUnlock" aria-hidden="true"></canvas>
+        <div class="grade" aria-hidden="true"></div>
+
+        <aside class="wall wall-left meter" aria-label="Progress">
+          <p class="meter-count"><span id="countNum">0</span><span class="meter-of">/30</span></p>
+          <p class="meter-label">stops unlocked</p>
+          <ol class="ticks" id="ticks" aria-hidden="true"></ol>
+          <p class="meter-next" id="meterNext">Focus for 60 minutes to land at Yosemite.</p>
+        </aside>
+
+        <article class="wall wall-right reveal off" id="reveal" aria-live="polite">
+          <p class="reveal-hour" id="revHour">Hour 1</p>
+          <h2 class="reveal-name" id="revName">Yosemite National Park and Half Dome</h2>
+          <p class="reveal-region" id="revRegion">Sierra Nevada</p>
+          <div class="reveal-text" id="revText" tabindex="0"></div>
+          <div class="reveal-actions">
+            <button class="btn btn-ghost" type="button" id="revListen" aria-pressed="false">Listen</button>
+            <button class="btn btn-ghost" type="button" id="revPostcard">Postcard</button>
+          </div>
+        </article>
+
+        <p class="chapter-mark" aria-hidden="true">II</p>
+      </div>
+    </section>
+
+    <!-- III. WINDOW SEAT: the five photographed stops, side by side -->
+    <section class="chapter chapter-windows" id="windows" aria-label="Window seat">
+      <div class="stage">
+        <div class="track" id="track"></div>
+        <p class="chapter-mark" aria-hidden="true">III</p>
+      </div>
+    </section>
+
+    <!-- IV. THE ITINERARY -->
+    <section class="itinerary" id="itinerary" aria-labelledby="itinTitle">
+      <div class="itin-head">
+        <h2 id="itinTitle">The whole itinerary</h2>
+        <p>Every hour of focus lands the plane at the next stop. Unlocked postcards open the flight attendant's full story.</p>
+      </div>
+      <ol class="itin-grid" id="itinGrid"></ol>
+    </section>
+
+    <footer class="foot">
+      <img src="assets/img/emblem.png" alt="" width="56" height="56">
+      <p>Flight 14-CA for Golden State Airlines. Stills made with GPT Image 2.5 and films with Kling 3.0 on Higgsfield.</p>
+      <p class="foot-small"><span id="footStats">0 hours flown</span> <button type="button" class="linkish" id="exportBtn">Export progress</button> <button type="button" class="linkish" id="importBtn">Import</button><input type="file" id="importFile" accept="application/json" hidden></p>
+    </footer>
+  </main>
+
+  <nav class="chapters" aria-label="Chapters">
+    <button type="button" data-go="flight"><span>The flight</span></button>
+    <button type="button" data-go="unlock"><span>The unlock</span></button>
+    <button type="button" data-go="windows"><span>Window seat</span></button>
+    <button type="button" data-go="itinerary"><span>Itinerary</span></button>
+  </nav>
+
+  <button class="skip-reveal" id="skipReveal" type="button">Skip</button>
+
+  <!-- compact timer that follows you once the console scrolls away -->
+  <div class="dock" id="dock" aria-label="Timer" hidden>
+    <span class="dock-mode" id="dockMode">Focus</span>
+    <span class="dock-clock" id="dockClock">60:00</span>
+    <button class="dock-btn" type="button" id="dockStart">Start</button>
+    <a class="dock-link" href="#console">Open</a>
+  </div>
+
+  <p class="standin" id="standin" hidden>Stand-in footage. Run <code>npm run frames</code> to load the Higgsfield films.</p>
+
+  <!-- postcard -->
+  <dialog class="dlg dlg-spot" id="spotDlg" aria-labelledby="spName">
+    <div class="spot">
+      <div class="spot-art" id="spArt"></div>
+      <div class="spot-body">
+        <img class="spot-photo" id="spPhoto" alt="" hidden>
+        <p class="spot-hour" id="spHour">Hour 1</p>
+        <h2 id="spName">Yosemite</h2>
+        <p class="spot-region" id="spRegion"></p>
+        <div class="spot-text" id="spText"></div>
+        <div class="spot-actions">
+          <button class="btn btn-ghost-dark" type="button" id="spListen" aria-pressed="false">Listen</button>
+          <button class="btn btn-ghost-dark" type="button" id="spPrev">Previous</button>
+          <button class="btn btn-ghost-dark" type="button" id="spNext">Next</button>
+        </div>
+      </div>
+    </div>
+    <button class="dlg-x" type="button" data-close aria-label="Close">&times;</button>
+  </dialog>
+
+  <!-- tasks -->
+  <dialog class="dlg dlg-side" id="tasksDlg" aria-labelledby="tkTitle">
+    <h2 id="tkTitle">Tasks</h2>
+    <p class="dlg-sub">Pick a task to work on. Each finished focus session adds a pomodoro to it.</p>
+    <ul class="tasks" id="taskList"></ul>
+    <form class="task-add" id="taskForm" autocomplete="off">
+      <label class="sr-only" for="taskTitle">New task</label>
+      <input id="taskTitle" type="text" maxlength="120" placeholder="What are you working on?" required>
+      <label class="sr-only" for="taskEst">Estimated pomodoros</label>
+      <input id="taskEst" type="number" min="1" max="99" value="1" inputmode="numeric" title="Estimated pomodoros">
+      <button class="btn btn-sun" type="submit">Add</button>
+    </form>
+    <p class="task-sum" id="taskSum"></p>
+    <div class="dlg-foot">
+      <button class="btn btn-ghost-dark" type="button" id="clearDone">Clear finished</button>
+      <button class="btn btn-ghost-dark" type="button" data-close>Done</button>
+    </div>
+  </dialog>
+
+  <!-- settings -->
+  <dialog class="dlg dlg-side" id="settingsDlg" aria-labelledby="stTitle">
+    <h2 id="stTitle">Settings</h2>
+    <form id="settingsForm" class="settings" autocomplete="off">
+      <fieldset>
+        <legend>Timer in minutes</legend>
+        <div class="trio">
+          <label>Focus<span class="stepper"><button type="button" data-step="-5" aria-label="5 minutes less focus">&minus;</button><input name="focus" type="number" min="1" max="180" inputmode="numeric"><button type="button" data-step="5" aria-label="5 minutes more focus">+</button></span></label>
+          <label>Break<span class="stepper"><button type="button" data-step="-1" aria-label="1 minute less break">&minus;</button><input name="short" type="number" min="1" max="60" inputmode="numeric"><button type="button" data-step="1" aria-label="1 minute more break">+</button></span></label>
+          <label>Long break<span class="stepper"><button type="button" data-step="-5" aria-label="5 minutes less long break">&minus;</button><input name="long" type="number" min="1" max="120" inputmode="numeric"><button type="button" data-step="5" aria-label="5 minutes more long break">+</button></span></label>
+        </div>
+        <label class="row">Long break after every<span class="stepper small"><button type="button" data-step="-1" aria-label="Fewer sessions">&minus;</button><input name="interval" type="number" min="1" max="12" inputmode="numeric"><button type="button" data-step="1" aria-label="More sessions">+</button></span>focus sessions</label>
+        <p class="hint" id="timerHint">Every 60 minutes of focus unlocks the next stop, whatever length you choose.</p>
+        <label class="row switch"><span>Start breaks automatically</span><input type="checkbox" name="autoBreaks"><i></i></label>
+        <label class="row switch"><span>Start focus automatically</span><input type="checkbox" name="autoFocus"><i></i></label>
+      </fieldset>
+      <fieldset>
+        <legend>Sound and voice</legend>
+        <label class="row switch"><span>Flight attendant chime when a session ends</span><input type="checkbox" name="chime"><i></i></label>
+        <label class="row">Volume<input type="range" name="volume" min="0" max="100" step="5"><output id="volOut">70</output></label>
+        <label class="row">Ring the chime<span class="stepper small"><button type="button" data-step="-1" aria-label="Fewer chimes">&minus;</button><input name="repeat" type="number" min="1" max="5" inputmode="numeric"><button type="button" data-step="1" aria-label="More chimes">+</button></span>times</label>
+        <label class="row switch"><span>Read each new stop aloud</span><input type="checkbox" name="narrate"><i></i></label>
+        <label class="row">Voice speed<input type="range" name="rate" min="0.7" max="1.4" step="0.05"><output id="rateOut">1x</output></label>
+        <p><button type="button" class="btn btn-ghost-dark" id="testChime">Play the chime</button></p>
+      </fieldset>
+      <fieldset>
+        <legend>Soundtrack</legend>
+        <label class="row switch"><span>Play the soundtrack</span><input type="checkbox" name="music"><i></i></label>
+        <label class="row">Music volume<input type="range" name="musicVol" min="0" max="100" step="5"><output id="musicOut">45</output></label>
+        <label class="row switch"><span>Pause the music during focus sessions</span><input type="checkbox" name="musicPauseFocus"><i></i></label>
+        <p class="hint">The music starts with your first click or key press, as browsers require, and dips under the chime and the narration.</p>
+      </fieldset>
+      <fieldset>
+        <legend>Journey</legend>
+        <p class="hint">Progress is saved in this browser. Restarting clears hours and unlocked stops; tasks and settings stay.</p>
+        <p><button type="button" class="btn btn-danger" id="resetJourney">Restart the journey</button></p>
+      </fieldset>
+    </form>
+    <div class="dlg-foot"><button class="btn btn-sun" type="button" data-close>Done</button></div>
+  </dialog>
+
+  <dialog class="dlg dlg-confirm" id="confirmDlg" aria-labelledby="cfTitle">
+    <h2 id="cfTitle">Are you sure?</h2>
+    <p id="cfText"></p>
+    <div class="dlg-foot"><button class="btn btn-ghost-dark" type="button" id="cfNo">Cancel</button><button class="btn btn-sun" type="button" id="cfYes">Continue</button></div>
+  </dialog>
+
+  <p class="sr-only" id="sr" aria-live="polite"></p>
+
+  <script src="assets/frames/manifest.js"></script>
+  <script src="assets/audio/narration/manifest.js"></script>
+  <script src="js/vendor/lenis.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/posters.js"></script>
+  <script src="js/sound-synth.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/frames.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
